@@ -4,7 +4,6 @@
 ## Learning Goals
 - Learn how to develop an iOS app using Swift
 - Learn how to build an API wrapper backend using Python and Flask
-- Learn about NoSQL databases and Firestore
 - Better understand how to integrate external API data into a frontend mobile application
 
 ## Problem Statement
@@ -16,7 +15,7 @@ Live-music lovers are often in search of upcoming concerts in their area. Althou
 - Competitor apps:
     - Next Week's Playlist
       - https://www.nextweeksplaylist.com/
-      - This is a web application that generates a playlist based on upcoming concerts in your city. It lets you filter by music venue and genre. It is fairly similar to what I want to build, but its limitation is that it only includes shows for the upcoming week, rather than letting the user input their desired timeframe. Also, it is a website rather than mobile app (I plan to build for mobile).
+      - This is a web application that generates a playlist based on upcoming concerts in your city. It lets you filter by music venue and genre. It is fairly similar to what I want to build, but its limitation is that it only includes shows for the upcoming week, rather than a longer timeframe. Also, it is a website rather than mobile app (I plan to build for mobile).
     - Setify
       - This is a web app that generates playlists based on the recent setlists of specific artists. It is different from what I want to create, because it does not generate a multi-artist playlist, and it does not find which artists are coming to your city.
     - Funkavinci (no longer supported)
@@ -33,14 +32,10 @@ Live-music lovers are often in search of upcoming concerts in their area. Althou
 
 My app targets concert-goers who are characterized by their love of music and desire to discover new artists and events. It also targets anyone hoping to find upcoming events that they will enjoy in their city.
 
-## Trello Board
-https://trello.com/b/QOXeVRHw/capstone
-
 ## Technologies
 
 - Back-end Technology:
   - Python Flask API wrapper that will make calls to the Spotify and Ticketmaster APIs
-  - Firestore database (Firebase) to persist data
 - Front-end Technology
   - Swift (using XCode)
 - Infrastructure
