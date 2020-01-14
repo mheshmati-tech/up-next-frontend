@@ -16,21 +16,28 @@ class LogInViewController: UIViewController, SPTSessionManagerDelegate {
         super.viewDidLoad()
         
         loginSpinner.stopAnimating()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBOutlet weak var loginSpinner: UIActivityIndicatorView!
     
     let defaults = UserDefaults.standard
     let keychain = KeychainSwift()
-    let env = DotEnv(withFile: "/Users/michaelamorrow/Desktop/Everything/2019-20/ada/capstone/Up_Next_1/.env")
-    let SpotifyRedirectURL = URL(string: "up-next-quick-start://spotify-login-callback")!
+    
+    let projectRoot = URL(fileURLWithPath: #file).pathComponents.dropLast(3).joined(separator: "/")
+    
+    lazy var envFilePath:String = {
+        return NSString.path(withComponents: [self.projectRoot, ".env"])
+    }()
+    
+    lazy var env = {
+        return DotEnv(withFile: envFilePath)
+    }()
     
     lazy var SpotifyClientID:String = {
-        
         return self.env.get("SPOTIFY_CLIENT_ID")!
     }()
+    
+    let SpotifyRedirectURL = URL(string: "up-next-quick-start://spotify-login-callback")!
     
     func sessionManager(manager: SPTSessionManager, didInitiate session: SPTSession) {
       print("success", session)
@@ -87,7 +94,7 @@ class LogInViewController: UIViewController, SPTSessionManagerDelegate {
     
     
     @IBAction func logInButtonPressed(_ sender: UIButton) {
-        let requestedScopes: SPTScope = [.appRemoteControl, .playlistModifyPublic]
+        let requestedScopes: SPTScope = [.appRemoteControl, .playlistModifyPrivate]
         if self.sessionManager.session != nil {
             self.sessionManager.renewSession()
         } else {
@@ -96,16 +103,6 @@ class LogInViewController: UIViewController, SPTSessionManagerDelegate {
         
         loginSpinner.startAnimating()
         
-//        let presentingController = self.presentingViewController
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(identifier: "SearchViewController") as! ViewController
-//        self.dismiss(animated: true) {
-//        presentingController?.navigationController?.pushViewController(vc, animated: true)
-//        }
-        
-        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(identifier: "ViewController") as! ViewController
     }
     
     
