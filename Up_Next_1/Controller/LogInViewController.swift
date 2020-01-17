@@ -80,8 +80,8 @@ class LogInViewController: UIViewController, SPTSessionManagerDelegate {
     )
 
     lazy var sessionManager: SPTSessionManager = {
-      if let tokenSwapURL = URL(string: "https://up-next-quick-start-token-swap.herokuapp.com/api/token"),
-         let tokenRefreshURL = URL(string: "https://up-next-quick-start-token-swap.herokuapp.com/api/refresh_token") {
+      if let tokenSwapURL = URL(string: "https://up-next-playlist.herokuapp.com/api/token"),
+         let tokenRefreshURL = URL(string: "https://up-next-playlist.herokuapp.com/api/refresh_token") {
         self.configuration.tokenSwapURL = tokenSwapURL
         self.configuration.tokenRefreshURL = tokenRefreshURL
         self.configuration.playURI = ""
