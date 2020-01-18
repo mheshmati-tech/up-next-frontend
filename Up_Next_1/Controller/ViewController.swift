@@ -15,14 +15,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
     let keychain = KeychainSwift()
     
     @IBOutlet weak var cityNameField: UITextField!
+    @IBOutlet weak var playlistNameField: UITextField!
     
     var spotifyManager = SpotifyManager()
     var refreshTokenManager = RefreshTokenManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.isTranslucent = true
         
         cityNameField.delegate = self
+        playlistNameField.delegate = self
     }
 
     @IBAction func generatePressed(_ sender: UIButton) {
@@ -54,6 +60,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             return true
         } else {
             cityNameField.placeholder = "You must enter a city name!"
+            playlistNameField.placeholder = "You must enter a playlist name!"
             return false
         }
     }
@@ -74,12 +81,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func submitForm() {
         print("The second access token is \(keychain.get("accessToken") ?? String()) yeah")
-        if var city = cityNameField.text, let accessToken = keychain.get("accessToken") {
+        if var city = cityNameField.text, var playlistName = playlistNameField.text, let accessToken = keychain.get("accessToken") {
             city = city.replacingOccurrences(of: " ", with: "%20")
-            spotifyManager.createPlaylist(cityName: city, accessToken: accessToken)
+            playlistName = playlistName.replacingOccurrences(of: " ", with: "%20")
+            spotifyManager.createPlaylist(accessToken: accessToken, cityName: city, playlistName: playlistName) {
+                if $0 {
+                    let newPlaylistURL = $1
+                    DispatchQueue.main.async {
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = storyboard.instantiateViewController(identifier: "CompletedViewController") as! CompletedViewController
+                        vc.playlistURL = newPlaylistURL
+                        self.navigationController!.pushViewController(vc, animated: true)
+                    }
+                }
+            }
         }
         cityNameField.text = ""
-        cityNameField.placeholder = "Enter a city name"
+        cityNameField.placeholder = "Enter a City Name"
+        playlistNameField.text = ""
+        playlistNameField.placeholder = "Enter a Playlist Name"
     }
     
     func checkExpiration(completed: @escaping (Bool) -> Void) {

@@ -8,12 +8,16 @@
 
 import UIKit
 import KeychainSwift
-import DotEnv
+//import DotEnv
 
 class LogInViewController: UIViewController, SPTSessionManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.isTranslucent = true
         
         loginSpinner.stopAnimating()
     }
@@ -23,18 +27,24 @@ class LogInViewController: UIViewController, SPTSessionManagerDelegate {
     let defaults = UserDefaults.standard
     let keychain = KeychainSwift()
     
-    let projectRoot = URL(fileURLWithPath: #file).pathComponents.dropLast(3).joined(separator: "/")
+//    let projectRoot = URL(fileURLWithPath: #file).pathComponents.dropLast(3).joined(separator: "/")
+//
+//    lazy var envFilePath:String = {
+//        return NSString.path(withComponents: [self.projectRoot, ".env"])
+//    }()
+//
+//    lazy var env = {
+//        return DotEnv(withFile: envFilePath)
+//    }()
+//
+//    lazy var SpotifyClientID:String = {
+//        return self.env.get("SPOTIFY_CLIENT_ID")!
+//    }()
     
-    lazy var envFilePath:String = {
-        return NSString.path(withComponents: [self.projectRoot, ".env"])
-    }()
-    
-    lazy var env = {
-        return DotEnv(withFile: envFilePath)
-    }()
+    let clientData = ClientData()
     
     lazy var SpotifyClientID:String = {
-        return self.env.get("SPOTIFY_CLIENT_ID")!
+        return clientData.clientID
     }()
     
     let SpotifyRedirectURL = URL(string: "up-next-quick-start://spotify-login-callback")!

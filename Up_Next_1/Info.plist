@@ -60,20 +60,18 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-      <string>spotify</string>
-    </array>
-    <key>CFBundleURLTypes</key>
-    <array>
-      <dict>
-        <key>CFBundleURLName</key>
-        <string>com.michaelamorrow.Up-Next-1</string>
-        <key>CFBundleURLSchemes</key>
-        <array>
-          <string>up-next-quick-start</string>
-        </array>
-      </dict>
-    </array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.michaelamorrow.Up-Next-1</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>up-next-quick-start</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

@@ -15,6 +15,8 @@
 		81BC869C23D13669008AC5F1 /* RefreshTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BC869B23D13668008AC5F1 /* RefreshTokenManager.swift */; };
 		81BC869E23D13983008AC5F1 /* RefreshTokenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BC869D23D13983008AC5F1 /* RefreshTokenData.swift */; };
 		81EF607423CD117F00BD69D9 /* SwiftDotEnv in Frameworks */ = {isa = PBXBuildFile; productRef = 81EF607323CD117F00BD69D9 /* SwiftDotEnv */; };
+		81F7B0B923D2631500DF0E06 /* CompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7B0B823D2631500DF0E06 /* CompletedViewController.swift */; };
+		81F7B0BB23D2967500DF0E06 /* ClientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7B0BA23D2967500DF0E06 /* ClientData.swift */; };
 		81F95C9423C3013A00E1FFDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F95C9323C3013A00E1FFDF /* AppDelegate.swift */; };
 		81F95C9623C3013A00E1FFDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F95C9523C3013A00E1FFDF /* SceneDelegate.swift */; };
 		81F95C9823C3013A00E1FFDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F95C9723C3013A00E1FFDF /* ViewController.swift */; };
@@ -50,6 +52,8 @@
 		81BC869923D0E9A8008AC5F1 /* SpotifyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyData.swift; sourceTree = "<group>"; };
 		81BC869B23D13668008AC5F1 /* RefreshTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenManager.swift; sourceTree = "<group>"; };
 		81BC869D23D13983008AC5F1 /* RefreshTokenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenData.swift; sourceTree = "<group>"; };
+		81F7B0B823D2631500DF0E06 /* CompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedViewController.swift; sourceTree = "<group>"; };
+		81F7B0BA23D2967500DF0E06 /* ClientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientData.swift; sourceTree = "<group>"; };
 		81F95C9023C3013A00E1FFDF /* Up_Next_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Up_Next_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F95C9323C3013A00E1FFDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81F95C9523C3013A00E1FFDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 			children = (
 				81F95C9723C3013A00E1FFDF /* ViewController.swift */,
 				811EBAF823C7EE1700D3B42E /* LogInViewController.swift */,
+				81F7B0B823D2631500DF0E06 /* CompletedViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 				81BC869923D0E9A8008AC5F1 /* SpotifyData.swift */,
 				81BC869B23D13668008AC5F1 /* RefreshTokenManager.swift */,
 				81BC869D23D13983008AC5F1 /* RefreshTokenData.swift */,
+				81F7B0BA23D2967500DF0E06 /* ClientData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -328,8 +334,10 @@
 				81F95C9823C3013A00E1FFDF /* ViewController.swift in Sources */,
 				81BC869A23D0E9A8008AC5F1 /* SpotifyData.swift in Sources */,
 				81BC869E23D13983008AC5F1 /* RefreshTokenData.swift in Sources */,
+				81F7B0BB23D2967500DF0E06 /* ClientData.swift in Sources */,
 				81BC869823D0E996008AC5F1 /* SpotifyManager.swift in Sources */,
 				81F95C9423C3013A00E1FFDF /* AppDelegate.swift in Sources */,
+				81F7B0B923D2631500DF0E06 /* CompletedViewController.swift in Sources */,
 				81F95C9623C3013A00E1FFDF /* SceneDelegate.swift in Sources */,
 				81BC869C23D13669008AC5F1 /* RefreshTokenManager.swift in Sources */,
 			);
@@ -513,6 +521,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = Up_Next_1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -537,6 +546,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = Up_Next_1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

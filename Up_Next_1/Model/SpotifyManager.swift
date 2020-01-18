@@ -11,12 +11,16 @@ import Foundation
 struct SpotifyManager {
     let createPlaylistURL = "https://up-next-playlist.herokuapp.com/playlists/new"
     
-    func createPlaylist(cityName: String, accessToken: String) {
-        let urlString = "\(createPlaylistURL)?accessToken=\(accessToken)&city=\(cityName)"
-        performRequest(urlString: urlString)
+    func createPlaylist(accessToken: String, cityName: String, playlistName: String, completed: @escaping (Bool, String) -> Void) {
+        let urlString = "\(createPlaylistURL)?accessToken=\(accessToken)&city=\(cityName)&playlistName=\(playlistName)"
+        performRequest(urlString: urlString) {
+            if $0 {
+               completed(true, $1)
+            }
+        }
     }
     
-    func performRequest(urlString: String) {
+    func performRequest(urlString: String, completed: @escaping (Bool, String) -> Void) {
         // 1. Create a URL
         
         if let url = URL(string: urlString) {
@@ -35,7 +39,11 @@ struct SpotifyManager {
                 }
                 
                 if let safeData = data {
-                    self.parseJSON(playlistData: safeData)
+                    self.parseJSON(playlistData: safeData) {
+                        if $0 {
+                           completed(true, $1)
+                        }
+                    }
                 }
             }
             // 4. Start the task
@@ -45,14 +53,18 @@ struct SpotifyManager {
         
     }
     
-    func parseJSON(playlistData: Data) {
+    func parseJSON(playlistData: Data, completed: (Bool, String) -> Void) {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(SpotifyData.self, from: playlistData)
             print(decodedData.playlist_uri)
             print(decodedData.events_found)
+            print(decodedData.playlist_url)
 //            print(decodedData.weather[0].description)
 //            print(decodedData.sys.sunrise)
+            if decodedData.events_found != "false" {
+                completed(true, decodedData.playlist_url)
+            }
         } catch {
             print(error)
         }

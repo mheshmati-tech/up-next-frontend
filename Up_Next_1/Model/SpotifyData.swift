@@ -11,6 +11,7 @@ import Foundation
 struct SpotifyData: Decodable {
     let playlist_uri: String
     let events_found: String
+    let playlist_url: String
 //    let main: Main
 //    let weather: [Weather]
 //    let sys: Sys
