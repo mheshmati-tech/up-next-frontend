@@ -89,7 +89,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func submitForm() {
         print("The second access token is \(keychain.get("accessToken") ?? String()) yeah")
-        if var city = cityNameField.text, var playlistName = playlistNameField.text, let genreId = selectedGenre, let accessToken = keychain.get("accessToken") {
+        if var city = cityNameField.text, city != "", var playlistName = playlistNameField.text, playlistName != "", let genreId = selectedGenre, let accessToken = keychain.get("accessToken"), accessToken != "" {
             city = city.replacingOccurrences(of: " ", with: "%20")
             playlistName = playlistName.replacingOccurrences(of: " ", with: "%20")
             spotifyManager.createPlaylist(accessToken: accessToken, cityName: city, playlistName: playlistName, genreId: genreId) {
@@ -103,6 +103,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
             }
+        } else {
+            let alertController = UIAlertController(title: "Playlist Generation Failed", message:
+                "You must complete all form fields to create a playlist.", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+            self.present(alertController, animated: true, completion: nil)
         }
         cityNameField.text = ""
         cityNameField.placeholder = "Enter a City Name"

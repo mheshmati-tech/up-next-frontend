@@ -61,173 +61,164 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="7VB-6Q-oq0" userLabel="Form Stack View">
-                                <rect key="frame" x="0.0" y="88" width="414" height="724"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Cf4-Ec-zoe" userLabel="Top Stack View">
+                                <rect key="frame" x="44" y="88" width="326" height="268"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Up Next" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtR-2z-GNy">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="326" height="40"/>
                                         <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="40"/>
                                         <color key="textColor" red="0.30196078431372547" green="0.83529411764705885" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="hf6-pB-JAi">
-                                        <rect key="frame" x="44" y="84" width="326" height="640"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="nMg-mY-YUy" userLabel="Name Playlist Stack View">
+                                        <rect key="frame" x="0.0" y="80" width="326" height="74"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="R9v-sc-TpP" userLabel="Entry Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="326" height="536"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="nMg-mY-YUy" userLabel="Name Playlist Stack View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="326" height="74"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your playlist:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTn-5k-MCN">
-                                                                <rect key="frame" x="0.0" y="0.0" width="326" height="25"/>
-                                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="25"/>
-                                                                <color key="textColor" red="0.0" green="0.56862745100000001" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Playlist Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p69-Hu-PqS">
-                                                                <rect key="frame" x="0.0" y="40" width="326" height="34"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                                            </textField>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="p69-Hu-PqS" secondAttribute="trailing" id="Ilb-e7-Afk"/>
-                                                            <constraint firstAttribute="height" constant="74" id="Zfb-gx-Mnp"/>
-                                                            <constraint firstItem="VTn-5k-MCN" firstAttribute="top" secondItem="nMg-mY-YUy" secondAttribute="top" id="a9a-G3-Sbe"/>
-                                                            <constraint firstItem="VTn-5k-MCN" firstAttribute="leading" secondItem="nMg-mY-YUy" secondAttribute="leading" id="f8A-BE-SXp"/>
-                                                            <constraint firstItem="p69-Hu-PqS" firstAttribute="leading" secondItem="nMg-mY-YUy" secondAttribute="leading" id="lNN-EV-LTv"/>
-                                                            <constraint firstAttribute="bottom" secondItem="p69-Hu-PqS" secondAttribute="bottom" id="lrb-aD-4Pm"/>
-                                                            <constraint firstItem="p69-Hu-PqS" firstAttribute="top" secondItem="VTn-5k-MCN" secondAttribute="bottom" constant="15" id="mpK-Pb-SAW"/>
-                                                            <constraint firstItem="p69-Hu-PqS" firstAttribute="top" secondItem="VTn-5k-MCN" secondAttribute="bottom" constant="15" id="qBT-Dk-WXC"/>
-                                                            <constraint firstAttribute="trailing" secondItem="VTn-5k-MCN" secondAttribute="trailing" id="xmz-7X-929"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YZK-5A-f34" userLabel="City Stack View">
-                                                        <rect key="frame" x="0.0" y="118" width="326" height="74"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What city are you in?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCO-2y-24z">
-                                                                <rect key="frame" x="0.0" y="0.0" width="326" height="25"/>
-                                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="25"/>
-                                                                <color key="textColor" red="0.0" green="0.56862745098039214" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a City Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gv9-Qp-Vwe">
-                                                                <rect key="frame" x="0.0" y="35" width="326" height="39"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                                            </textField>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="gv9-Qp-Vwe" secondAttribute="bottom" id="3av-zo-Los"/>
-                                                            <constraint firstItem="gv9-Qp-Vwe" firstAttribute="top" secondItem="DCO-2y-24z" secondAttribute="bottom" constant="10" id="76z-HK-ewn"/>
-                                                            <constraint firstItem="DCO-2y-24z" firstAttribute="leading" secondItem="YZK-5A-f34" secondAttribute="leading" id="DE2-0F-ztd"/>
-                                                            <constraint firstAttribute="trailing" secondItem="gv9-Qp-Vwe" secondAttribute="trailing" id="Kqu-os-Kkg"/>
-                                                            <constraint firstAttribute="height" constant="74" id="QHE-C8-kDF"/>
-                                                            <constraint firstItem="gv9-Qp-Vwe" firstAttribute="top" secondItem="DCO-2y-24z" secondAttribute="bottom" constant="10" id="YAK-cV-IIN"/>
-                                                            <constraint firstItem="gv9-Qp-Vwe" firstAttribute="leading" secondItem="YZK-5A-f34" secondAttribute="leading" id="nLr-LS-mCE"/>
-                                                            <constraint firstAttribute="trailing" secondItem="DCO-2y-24z" secondAttribute="trailing" id="npR-W1-JnA"/>
-                                                            <constraint firstItem="DCO-2y-24z" firstAttribute="top" secondItem="YZK-5A-f34" secondAttribute="top" id="t0l-B5-G9d"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gmi-0I-RhK" userLabel="Genre Stack View">
-                                                        <rect key="frame" x="0.0" y="236" width="326" height="300"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a genre:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhR-FB-MRQ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="326" height="25"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="25" id="auc-Fg-oar"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="25"/>
-                                                                <color key="textColor" red="0.0" green="0.56862745100000001" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5xG-NR-9kq" userLabel="Genre Table Stack View">
-                                                                <rect key="frame" x="0.0" y="35" width="326" height="265"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQQ-rw-kN6">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="326" height="40"/>
-                                                                        <color key="backgroundColor" red="0.30196078430000001" green="0.83529411760000005" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="40" id="JtH-dr-n8g"/>
-                                                                        </constraints>
-                                                                        <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
-                                                                        <state key="normal" title="Select a Genre">
-                                                                            <color key="titleColor" red="0.066666666669999999" green="0.0039215686269999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        </state>
-                                                                        <connections>
-                                                                            <action selector="selectGenreClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WHU-HW-3K1"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZDU-qP-QXa">
-                                                                        <rect key="frame" x="0.0" y="40" width="326" height="225"/>
-                                                                        <color key="backgroundColor" red="0.0" green="0.56862745100000001" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <prototypes>
-                                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReusableCell" id="nah-fZ-UCw">
-                                                                                <rect key="frame" x="0.0" y="28" width="326" height="43.5"/>
-                                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nah-fZ-UCw" id="eYV-YG-LDr">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="43.5"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                                </tableViewCellContentView>
-                                                                                <color key="backgroundColor" red="0.0" green="0.56862745100000001" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            </tableViewCell>
-                                                                        </prototypes>
-                                                                    </tableView>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="ZDU-qP-QXa" firstAttribute="leading" secondItem="5xG-NR-9kq" secondAttribute="leading" id="2nv-2t-SeP"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="ZDU-qP-QXa" secondAttribute="trailing" id="GOu-dp-dnF"/>
-                                                                    <constraint firstItem="ZDU-qP-QXa" firstAttribute="top" secondItem="lQQ-rw-kN6" secondAttribute="bottom" id="bX9-GJ-aYv"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="ZDU-qP-QXa" secondAttribute="bottom" id="bnI-pz-voz"/>
-                                                                </constraints>
-                                                            </stackView>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="5xG-NR-9kq" firstAttribute="top" secondItem="MhR-FB-MRQ" secondAttribute="bottom" constant="10" id="EtN-WO-h33"/>
-                                                            <constraint firstItem="5xG-NR-9kq" firstAttribute="leading" secondItem="gmi-0I-RhK" secondAttribute="leading" id="Gga-UE-jVR"/>
-                                                            <constraint firstItem="MhR-FB-MRQ" firstAttribute="leading" secondItem="gmi-0I-RhK" secondAttribute="leading" id="LBE-xf-fAG"/>
-                                                            <constraint firstItem="MhR-FB-MRQ" firstAttribute="top" secondItem="gmi-0I-RhK" secondAttribute="top" id="MDg-B1-BmN"/>
-                                                            <constraint firstAttribute="bottom" secondItem="5xG-NR-9kq" secondAttribute="bottom" id="MYW-fg-0YX"/>
-                                                            <constraint firstAttribute="trailing" secondItem="MhR-FB-MRQ" secondAttribute="trailing" id="ZUH-cc-xMk"/>
-                                                            <constraint firstItem="5xG-NR-9kq" firstAttribute="top" secondItem="MhR-FB-MRQ" secondAttribute="bottom" constant="10" id="q9C-WI-Fmu"/>
-                                                            <constraint firstAttribute="trailing" secondItem="5xG-NR-9kq" secondAttribute="trailing" id="zsT-kK-N8P"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ntg-bG-Uz6">
-                                                <rect key="frame" x="35" y="580" width="256" height="60"/>
-                                                <color key="backgroundColor" red="0.30196078431372547" green="0.83529411764705885" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="LDv-im-Mb2"/>
-                                                    <constraint firstAttribute="width" constant="256" id="bLj-Or-7IA"/>
-                                                </constraints>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your playlist:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTn-5k-MCN">
+                                                <rect key="frame" x="0.0" y="0.0" width="326" height="25"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="25"/>
-                                                <state key="normal" title="Generate Playlist">
-                                                    <color key="titleColor" red="0.066666666666666666" green="0.0039215686274509803" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="generatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UTp-ni-dfv"/>
-                                                </connections>
-                                            </button>
+                                                <color key="textColor" red="0.0" green="0.56862745100000001" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Playlist Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p69-Hu-PqS">
+                                                <rect key="frame" x="0.0" y="40" width="326" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                            </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="p69-Hu-PqS" secondAttribute="trailing" id="Ilb-e7-Afk"/>
+                                            <constraint firstAttribute="height" constant="74" id="Zfb-gx-Mnp"/>
+                                            <constraint firstItem="VTn-5k-MCN" firstAttribute="top" secondItem="nMg-mY-YUy" secondAttribute="top" id="a9a-G3-Sbe"/>
+                                            <constraint firstItem="VTn-5k-MCN" firstAttribute="leading" secondItem="nMg-mY-YUy" secondAttribute="leading" id="f8A-BE-SXp"/>
+                                            <constraint firstItem="p69-Hu-PqS" firstAttribute="leading" secondItem="nMg-mY-YUy" secondAttribute="leading" id="lNN-EV-LTv"/>
+                                            <constraint firstAttribute="bottom" secondItem="p69-Hu-PqS" secondAttribute="bottom" id="lrb-aD-4Pm"/>
+                                            <constraint firstItem="p69-Hu-PqS" firstAttribute="top" secondItem="VTn-5k-MCN" secondAttribute="bottom" constant="15" id="mpK-Pb-SAW"/>
+                                            <constraint firstItem="p69-Hu-PqS" firstAttribute="top" secondItem="VTn-5k-MCN" secondAttribute="bottom" constant="15" id="qBT-Dk-WXC"/>
+                                            <constraint firstAttribute="trailing" secondItem="VTn-5k-MCN" secondAttribute="trailing" id="xmz-7X-929"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YZK-5A-f34" userLabel="City Stack View">
+                                        <rect key="frame" x="0.0" y="194" width="326" height="74"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What city are you in?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCO-2y-24z">
+                                                <rect key="frame" x="0.0" y="0.0" width="326" height="25"/>
+                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="25"/>
+                                                <color key="textColor" red="0.0" green="0.56862745098039214" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a City Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gv9-Qp-Vwe">
+                                                <rect key="frame" x="0.0" y="35" width="326" height="39"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="gv9-Qp-Vwe" secondAttribute="bottom" id="3av-zo-Los"/>
+                                            <constraint firstItem="gv9-Qp-Vwe" firstAttribute="top" secondItem="DCO-2y-24z" secondAttribute="bottom" constant="10" id="76z-HK-ewn"/>
+                                            <constraint firstItem="DCO-2y-24z" firstAttribute="leading" secondItem="YZK-5A-f34" secondAttribute="leading" id="DE2-0F-ztd"/>
+                                            <constraint firstAttribute="trailing" secondItem="gv9-Qp-Vwe" secondAttribute="trailing" id="Kqu-os-Kkg"/>
+                                            <constraint firstAttribute="height" constant="74" id="QHE-C8-kDF"/>
+                                            <constraint firstItem="gv9-Qp-Vwe" firstAttribute="top" secondItem="DCO-2y-24z" secondAttribute="bottom" constant="10" id="YAK-cV-IIN"/>
+                                            <constraint firstItem="gv9-Qp-Vwe" firstAttribute="leading" secondItem="YZK-5A-f34" secondAttribute="leading" id="nLr-LS-mCE"/>
+                                            <constraint firstAttribute="trailing" secondItem="DCO-2y-24z" secondAttribute="trailing" id="npR-W1-JnA"/>
+                                            <constraint firstItem="DCO-2y-24z" firstAttribute="top" secondItem="YZK-5A-f34" secondAttribute="top" id="t0l-B5-G9d"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="DtR-2z-GNy" firstAttribute="top" secondItem="7VB-6Q-oq0" secondAttribute="top" id="07y-Ka-I44"/>
-                                    <constraint firstItem="hf6-pB-JAi" firstAttribute="top" secondItem="DtR-2z-GNy" secondAttribute="bottom" constant="44" id="8qF-T9-Bm8"/>
-                                    <constraint firstAttribute="trailing" secondItem="DtR-2z-GNy" secondAttribute="trailing" id="IFE-Vk-2cT"/>
-                                    <constraint firstItem="DtR-2z-GNy" firstAttribute="leading" secondItem="7VB-6Q-oq0" secondAttribute="leading" id="doB-SR-lJU"/>
+                                    <constraint firstAttribute="trailing" secondItem="nMg-mY-YUy" secondAttribute="trailing" id="0JX-wQ-ueq"/>
+                                    <constraint firstAttribute="trailing" secondItem="YZK-5A-f34" secondAttribute="trailing" id="0x7-Yk-06Y"/>
+                                    <constraint firstItem="DtR-2z-GNy" firstAttribute="top" secondItem="Cf4-Ec-zoe" secondAttribute="top" id="POV-uF-cHI"/>
+                                    <constraint firstItem="YZK-5A-f34" firstAttribute="leading" secondItem="Cf4-Ec-zoe" secondAttribute="leading" id="Upt-sO-fX3"/>
+                                    <constraint firstItem="DtR-2z-GNy" firstAttribute="centerX" secondItem="Cf4-Ec-zoe" secondAttribute="centerX" id="hLI-Mk-NQs"/>
+                                    <constraint firstItem="nMg-mY-YUy" firstAttribute="leading" secondItem="Cf4-Ec-zoe" secondAttribute="leading" id="zdD-lE-jFd"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="J6y-jH-7dz" userLabel="Genre Stack View">
+                                <rect key="frame" x="44" y="396" width="326" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a genre:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhR-FB-MRQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="205" height="25"/>
+                                        <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="25"/>
+                                        <color key="textColor" red="0.0" green="0.56862745100000001" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5xG-NR-9kq" userLabel="Genre Table Stack View">
+                                        <rect key="frame" x="0.0" y="35" width="326" height="265"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQQ-rw-kN6">
+                                                <rect key="frame" x="0.0" y="0.0" width="326" height="40"/>
+                                                <color key="backgroundColor" red="0.30196078430000001" green="0.83529411760000005" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="JtH-dr-n8g"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
+                                                <state key="normal" title="Select a Genre">
+                                                    <color key="titleColor" red="0.066666666669999999" green="0.0039215686269999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="selectGenreClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WHU-HW-3K1"/>
+                                                </connections>
+                                            </button>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZDU-qP-QXa">
+                                                <rect key="frame" x="0.0" y="40" width="326" height="225"/>
+                                                <color key="backgroundColor" red="0.0" green="0.56862745100000001" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="225" id="AK5-xL-Akt"/>
+                                                </constraints>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReusableCell" id="nah-fZ-UCw">
+                                                        <rect key="frame" x="0.0" y="28" width="326" height="43.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nah-fZ-UCw" id="eYV-YG-LDr">
+                                                            <rect key="frame" x="0.0" y="0.0" width="326" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                        <color key="backgroundColor" red="0.0" green="0.56862745100000001" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ZDU-qP-QXa" secondAttribute="trailing" id="9k1-HT-Ji1"/>
+                                            <constraint firstItem="ZDU-qP-QXa" firstAttribute="leading" secondItem="5xG-NR-9kq" secondAttribute="leading" id="XHT-hd-Hxb"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZDU-qP-QXa" secondAttribute="bottom" id="YJw-Zg-0lf"/>
+                                            <constraint firstItem="ZDU-qP-QXa" firstAttribute="top" secondItem="lQQ-rw-kN6" secondAttribute="bottom" id="bX9-GJ-aYv"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5xG-NR-9kq" firstAttribute="leading" secondItem="J6y-jH-7dz" secondAttribute="leading" id="2D5-XK-jxd"/>
+                                    <constraint firstAttribute="trailing" secondItem="5xG-NR-9kq" secondAttribute="trailing" id="Rcf-OP-bzF"/>
+                                    <constraint firstItem="5xG-NR-9kq" firstAttribute="top" secondItem="MhR-FB-MRQ" secondAttribute="bottom" constant="10" id="hhs-kF-Rl4"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ntg-bG-Uz6">
+                                <rect key="frame" x="79" y="742" width="256" height="60"/>
+                                <color key="backgroundColor" red="0.30196078431372547" green="0.83529411764705885" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="dTM-OI-M7I"/>
+                                    <constraint firstAttribute="height" constant="60" id="hkm-P6-n0D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="25"/>
+                                <state key="normal" title="Generate Playlist">
+                                    <color key="titleColor" red="0.066666666666666666" green="0.0039215686274509803" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="generatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UTp-ni-dfv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.0039215686274509803" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7VB-6Q-oq0" secondAttribute="bottom" constant="50" id="0O1-g9-CXv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7VB-6Q-oq0" secondAttribute="trailing" id="Gh5-dm-ER5"/>
-                            <constraint firstItem="7VB-6Q-oq0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dLs-sj-Dy7"/>
-                            <constraint firstItem="7VB-6Q-oq0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xsQ-NQ-Ody"/>
+                            <constraint firstItem="J6y-jH-7dz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="4mT-ZG-Bz8"/>
+                            <constraint firstItem="Ntg-bG-Uz6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4ni-ZW-f1q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J6y-jH-7dz" secondAttribute="trailing" constant="44" id="5fZ-J5-icl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cf4-Ec-zoe" secondAttribute="trailing" constant="44" id="BPK-h6-VnJ"/>
+                            <constraint firstItem="Cf4-Ec-zoe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Gm1-Fd-gYb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ntg-bG-Uz6" secondAttribute="bottom" constant="60" id="LYC-ak-i0a"/>
+                            <constraint firstItem="Cf4-Ec-zoe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="UFX-aF-ACc"/>
+                            <constraint firstItem="J6y-jH-7dz" firstAttribute="top" secondItem="Cf4-Ec-zoe" secondAttribute="bottom" constant="40" id="ckd-O1-Tto"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
