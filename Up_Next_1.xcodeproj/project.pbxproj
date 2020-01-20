@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		811EBAF923C7EE1700D3B42E /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EBAF823C7EE1700D3B42E /* LogInViewController.swift */; };
 		81440A9023CA7F4900DDA8C6 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 81440A8F23CA7F4900DDA8C6 /* KeychainSwift */; };
+		8152E04523D4079B0047A30F /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8152E04423D4079B0047A30F /* Genre.swift */; };
 		8195829623C9056E00962839 /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8195829523C9050900962839 /* SpotifyiOS.framework */; };
 		81BC869823D0E996008AC5F1 /* SpotifyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BC869723D0E996008AC5F1 /* SpotifyManager.swift */; };
 		81BC869A23D0E9A8008AC5F1 /* SpotifyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BC869923D0E9A8008AC5F1 /* SpotifyData.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		811EBAF823C7EE1700D3B42E /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		8152E04423D4079B0047A30F /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		8167B65C23C812480077FEFA /* Up_Next_1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Up_Next_1-Bridging-Header.h"; sourceTree = "<group>"; };
 		8195829523C9050900962839 /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
 		81BC869723D0E996008AC5F1 /* SpotifyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyManager.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				81BC869B23D13668008AC5F1 /* RefreshTokenManager.swift */,
 				81BC869D23D13983008AC5F1 /* RefreshTokenData.swift */,
 				81F7B0BA23D2967500DF0E06 /* ClientData.swift */,
+				8152E04423D4079B0047A30F /* Genre.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				811EBAF923C7EE1700D3B42E /* LogInViewController.swift in Sources */,
 				81F95C9823C3013A00E1FFDF /* ViewController.swift in Sources */,
 				81BC869A23D0E9A8008AC5F1 /* SpotifyData.swift in Sources */,
+				8152E04523D4079B0047A30F /* Genre.swift in Sources */,
 				81BC869E23D13983008AC5F1 /* RefreshTokenData.swift in Sources */,
 				81F7B0BB23D2967500DF0E06 /* ClientData.swift in Sources */,
 				81BC869823D0E996008AC5F1 /* SpotifyManager.swift in Sources */,

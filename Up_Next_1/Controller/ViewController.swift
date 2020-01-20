@@ -16,9 +16,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var cityNameField: UITextField!
     @IBOutlet weak var playlistNameField: UITextField!
+    @IBOutlet weak var selectGenreButton: UIButton!
+    @IBOutlet weak var genreTableView: UITableView!
     
     var spotifyManager = SpotifyManager()
     var refreshTokenManager = RefreshTokenManager()
+    
+    var selectedGenre: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         cityNameField.delegate = self
         playlistNameField.delegate = self
+        genreTableView.dataSource = self
+        genreTableView.delegate = self
+        
+        genreTableView.isHidden = true
     }
 
     @IBAction func generatePressed(_ sender: UIButton) {
@@ -81,10 +89,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func submitForm() {
         print("The second access token is \(keychain.get("accessToken") ?? String()) yeah")
-        if var city = cityNameField.text, var playlistName = playlistNameField.text, let accessToken = keychain.get("accessToken") {
+        if var city = cityNameField.text, var playlistName = playlistNameField.text, let genreId = selectedGenre, let accessToken = keychain.get("accessToken") {
             city = city.replacingOccurrences(of: " ", with: "%20")
             playlistName = playlistName.replacingOccurrences(of: " ", with: "%20")
-            spotifyManager.createPlaylist(accessToken: accessToken, cityName: city, playlistName: playlistName) {
+            spotifyManager.createPlaylist(accessToken: accessToken, cityName: city, playlistName: playlistName, genreId: genreId) {
                 if $0 {
                     let newPlaylistURL = $1
                     DispatchQueue.main.async {
@@ -120,5 +128,64 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    var genres: [Genre] = [
+        Genre(genreName: "All Genres", genreId: ""),
+        Genre(genreName: "Alternative", genreId: "KnvZfZ7vAvv"),
+        Genre(genreName: "Blues", genreId: "KnvZfZ7vAvd"),
+        Genre(genreName: "Classical", genreId: "KnvZfZ7vAeJ"),
+        Genre(genreName: "Country", genreId: "KnvZfZ7vAv6"),
+        Genre(genreName: "Electronic", genreId: "KnvZfZ7vAvF"),
+        Genre(genreName: "Folk", genreId: "KnvZfZ7vAva"),
+        Genre(genreName: "Hip-Hop", genreId: "KnvZfZ7vAv1"),
+        Genre(genreName: "Jazz", genreId: "KnvZfZ7vAvE"),
+        Genre(genreName: "Pop", genreId: "KnvZfZ7vAev"),
+        Genre(genreName: "R&B", genreId: "KnvZfZ7vAee"),
+        Genre(genreName: "Rock", genreId: "KnvZfZ7vAeA")
+    ]
+    
+    @IBAction func selectGenreClicked(_ sender: UIButton) {
+        if genreTableView.isHidden {
+            animate(toggle: true)
+        } else {
+            animate(toggle: false)
+        }
+    }
+    
+    func animate(toggle: Bool) {
+        if toggle {
+            UIView.animate(withDuration: 0.3) {
+                self.genreTableView.isHidden = false
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.genreTableView.isHidden = true
+            }
+        }
+    }
+    
+    
+}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return genres.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath)
+        cell.textLabel?.text = genres[indexPath.row].genreName
+        return cell
+    }
+    
+    
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(genres[indexPath.row].genreId)
+        selectGenreButton.setTitle(genres[indexPath.row].genreName, for: .normal)
+        animate(toggle: false)
+        selectedGenre = genres[indexPath.row].genreId
+    }
 }
 
