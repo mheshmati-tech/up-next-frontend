@@ -25,10 +25,8 @@ struct RefreshTokenManager {
     }
     
     func performRequest(urlString: String, completed: @escaping (Bool, String) -> Void) {
-        // 1. Create a URL
         
         if let url = URL(string: urlString), let refreshToken = keychain.get("refreshToken") {
-            
             
             let bodyString = "refresh_token=\(refreshToken)"
             
@@ -38,10 +36,8 @@ struct RefreshTokenManager {
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
             request.httpBody = bodyString.data(using: .utf8)
             
-            // 2. Create a URLSession
             let session = URLSession(configuration: .default)
             
-            // 3. Give the session a task
             let task = session.dataTask(with: request) { (data, response, error) in
                 if error != nil {
                     print(error!)
@@ -57,9 +53,7 @@ struct RefreshTokenManager {
                 }
             }
             task.resume()
-            
         }
-        
     }
     
     func parseJSON(refreshTokenData: Data, completed: (Bool, String) -> Void) {

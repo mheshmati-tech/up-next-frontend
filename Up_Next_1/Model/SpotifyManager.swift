@@ -21,17 +21,14 @@ struct SpotifyManager {
     }
     
     func performRequest(urlString: String, completed: @escaping (Bool, String, Bool) -> Void) {
-        // 1. Create a URL
         
         if let url = URL(string: urlString) {
             
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             
-            // 2. Create a URLSession
             let session = URLSession(configuration: .default)
             
-            // 3. Give the session a task
             let task = session.dataTask(with: request) { (data, response, error) in
                 if error != nil {
                     print(error!)
@@ -46,11 +43,8 @@ struct SpotifyManager {
                     }
                 }
             }
-            // 4. Start the task
             task.resume()
-            
         }
-        
     }
     
     func parseJSON(playlistData: Data, completed: (Bool, String, Bool) -> Void) {

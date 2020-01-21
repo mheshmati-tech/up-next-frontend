@@ -14,19 +14,4 @@ struct SpotifyData: Decodable {
     let playlist_url: String
     let wait_time: String
     let rate_limited: String
-//    let main: Main
-//    let weather: [Weather]
-//    let sys: Sys
 }
-
-//struct Main: Decodable {
-//    let temp: Double
-//}
-//
-//struct Weather: Decodable {
-//    let description: String
-//}
-//
-//struct Sys: Decodable {
-//    let sunrise: Int
-//}

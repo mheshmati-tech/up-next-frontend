@@ -45,17 +45,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func generatePressed(_ sender: UIButton) {
-        print("The first access token is \(keychain.get("accessToken") ?? String()) yeah")
         loadingSpinner.startAnimating()
 
-//        let currentDate = Date()
-//        if let expirationDate = defaults.object (forKey: "expirationDate") as? Date {
-//            if expirationDate < currentDate.addingTimeInterval(5.0 * 60.0) {
-//                refreshTokenManager.refreshToken()
-//            }
-//        }
         // once it finishes the check expiration process, submit the form
-        // will probably need another round of closures within in order to switch to a new page when the process is complete
         checkExpiration {
             if $0, $1 == "" {
                 DispatchQueue.main.async {
@@ -72,25 +64,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
-        
-//        cityNameField.endEditing(true)
-//        submitForm()
-        print("Generate button pressed")
     }
-    
-//    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-//        if textField.text != "" {
-//            return true
-//        } else {
-//            cityNameField.placeholder = "You must enter a city name!"
-//            playlistNameField.placeholder = "You must enter a playlist name!"
-//            return false
-//        }
-//    }
-    
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        textField.resignFirstResponder()
-//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -98,13 +72,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func submitForm() {
-        print("The second access token is \(keychain.get("accessToken") ?? String()) yeah")
-        print(playlistNameField.text!)
         if var city = cityNameField.text, city != "", var playlistName = playlistNameField.text, playlistName != "", let genreId = selectedGenre, let accessToken = keychain.get("accessToken"), accessToken != "" {
             city = city.replacingOccurrences(of: " ", with: "%20")
             playlistName = playlistName.replacingOccurrences(of: " ", with: "%20")
             playlistName = playlistName.replacingOccurrences(of: "&", with: "and")
-            print(playlistName)
             spotifyManager.createPlaylist(accessToken: accessToken, cityName: city, playlistName: playlistName, genreId: genreId) {
                 if $0, $2 {
                     let newPlaylistURL = $1
@@ -203,8 +174,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if string.rangeOfCharacter(from: CharacterSet.letters.inverted) != nil { return false }
         return true
     }
-    
-    
 }
 
 extension ViewController: UITableViewDataSource {
@@ -217,8 +186,6 @@ extension ViewController: UITableViewDataSource {
         cell.textLabel?.text = genres[indexPath.row].genreName
         return cell
     }
-    
-    
 }
 
 extension ViewController: UITableViewDelegate {

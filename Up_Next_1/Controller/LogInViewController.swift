@@ -8,7 +8,6 @@
 
 import UIKit
 import KeychainSwift
-//import DotEnv
 
 class LogInViewController: UIViewController, SPTSessionManagerDelegate {
     
@@ -26,20 +25,6 @@ class LogInViewController: UIViewController, SPTSessionManagerDelegate {
     
     let defaults = UserDefaults.standard
     let keychain = KeychainSwift()
-    
-//    let projectRoot = URL(fileURLWithPath: #file).pathComponents.dropLast(3).joined(separator: "/")
-//
-//    lazy var envFilePath:String = {
-//        return NSString.path(withComponents: [self.projectRoot, ".env"])
-//    }()
-//
-//    lazy var env = {
-//        return DotEnv(withFile: envFilePath)
-//    }()
-//
-//    lazy var SpotifyClientID:String = {
-//        return self.env.get("SPOTIFY_CLIENT_ID")!
-//    }()
     
     let clientData = ClientData()
     
@@ -100,9 +85,6 @@ class LogInViewController: UIViewController, SPTSessionManagerDelegate {
       return manager
     }()
     
-    
-    
-    
     @IBAction func logInButtonPressed(_ sender: UIButton) {
         let requestedScopes: SPTScope = [.appRemoteControl, .playlistModifyPrivate]
         if self.sessionManager.session != nil {
@@ -114,19 +96,4 @@ class LogInViewController: UIViewController, SPTSessionManagerDelegate {
         loginSpinner.startAnimating()
         
     }
-    
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

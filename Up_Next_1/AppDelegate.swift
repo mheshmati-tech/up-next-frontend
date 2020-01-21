@@ -33,43 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
-    // I added below from spotify and changed self to rootViewController and added a . before .OpenURLOptionsKey
-    
-//    func sessionManager(manager: SPTSessionManager, didInitiate session: SPTSession) {
-//      print("success", session)
-//        DispatchQueue.main.async {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(identifier: "SearchViewController") as! ViewController
-//        self.navigationController!.pushViewController(vc, animated: true)
-//        }
-//    }
-//
-//    func sessionManager(manager: SPTSessionManager, didFailWith error: Error) {
-//      print("fail", error)
-//    }
-//    func sessionManager(manager: SPTSessionManager, didRenew session: SPTSession) {
-//      print("renewed", session)
-//    }
-//
-//    let SpotifyClientID = "8f39e1b6b595428cb6b26fae696b2495"
-//    let SpotifyRedirectURL = URL(string: "up-next-quick-start://spotify-login-callback")!
-//
-//    lazy var configuration = SPTConfiguration(
-//      clientID: SpotifyClientID,
-//      redirectURL: SpotifyRedirectURL
-//    )
-//
-//    lazy var sessionManager: SPTSessionManager = {
-//      if let tokenSwapURL = URL(string: "https://up-next-quick-start-token-swap.herokuapp.com/api/token"),
-//         let tokenRefreshURL = URL(string: "https://up-next-quick-start-token-swap.herokuapp.com/api/refresh_token") {
-//        self.configuration.tokenSwapURL = tokenSwapURL
-//        self.configuration.tokenRefreshURL = tokenRefreshURL
-//        self.configuration.playURI = ""
-//      }
-//      let manager = SPTSessionManager(configuration: self.configuration, delegate: self)
-//      return manager
-//    }()
-    
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
       rootViewController.sessionManager.application(app, open: url, options: options)
       return true
