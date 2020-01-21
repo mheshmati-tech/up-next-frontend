@@ -15,16 +15,16 @@ struct RefreshTokenManager {
     let defaults = UserDefaults.standard
     let refreshTokenURL = "https://up-next-playlist.herokuapp.com/api/refresh_token"
     
-    func refreshToken(completed: @escaping (Bool) -> Void) {
+    func refreshToken(completed: @escaping (Bool, String) -> Void) {
         let urlString = refreshTokenURL
         performRequest(urlString: urlString) {
             if $0 {
-                completed(true)
+                completed(true, $1)
             }
         }
     }
     
-    func performRequest(urlString: String, completed: @escaping (Bool) -> Void) {
+    func performRequest(urlString: String, completed: @escaping (Bool, String) -> Void) {
         // 1. Create a URL
         
         if let url = URL(string: urlString), let refreshToken = keychain.get("refreshToken") {
@@ -51,7 +51,7 @@ struct RefreshTokenManager {
                 if let safeData = data {
                     self.parseJSON(refreshTokenData: safeData) {
                         if $0 {
-                            completed(true)
+                            completed(true, $1)
                         }
                     }
                 }
@@ -62,18 +62,21 @@ struct RefreshTokenManager {
         
     }
     
-    func parseJSON(refreshTokenData: Data, completed: (Bool) -> Void) {
+    func parseJSON(refreshTokenData: Data, completed: (Bool, String) -> Void) {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(RefreshTokenData.self, from: refreshTokenData)
-            keychain.set(decodedData.access_token, forKey: "accessToken")
-            keychain.set(decodedData.refresh_token, forKey: "refreshToken")
-            
-            let expiration_date = Date().addingTimeInterval(Double(decodedData.expires_in))
-            defaults.set(expiration_date, forKey: "expirationDate")
-            
-            print(decodedData.access_token)
-            completed(true)
+            if decodedData.access_token != "false" {
+                keychain.set(decodedData.access_token, forKey: "accessToken")
+                keychain.set(decodedData.refresh_token, forKey: "refreshToken")
+                
+                let expiration_date = Date().addingTimeInterval(Double(decodedData.expires_in))
+                defaults.set(expiration_date, forKey: "expirationDate")
+                
+                completed(true, "")
+            } else {
+                completed(true, "Failed to refresh Spotify log-in; restart the app to log-in again.")
+            }
         } catch {
             print(error)
         }

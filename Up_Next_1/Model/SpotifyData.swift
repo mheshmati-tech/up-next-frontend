@@ -10,8 +10,10 @@ import Foundation
 
 struct SpotifyData: Decodable {
     let playlist_uri: String
-    let events_found: String
+    let successfully_generated: String
     let playlist_url: String
+    let wait_time: String
+    let rate_limited: String
 //    let main: Main
 //    let weather: [Weather]
 //    let sys: Sys
