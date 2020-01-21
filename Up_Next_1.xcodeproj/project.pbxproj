@@ -56,7 +56,7 @@
 		81BC869D23D13983008AC5F1 /* RefreshTokenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenData.swift; sourceTree = "<group>"; };
 		81F7B0B823D2631500DF0E06 /* CompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedViewController.swift; sourceTree = "<group>"; };
 		81F7B0BA23D2967500DF0E06 /* ClientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientData.swift; sourceTree = "<group>"; };
-		81F95C9023C3013A00E1FFDF /* Up_Next_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Up_Next_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81F95C9023C3013A00E1FFDF /* Up Next.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Up Next.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F95C9323C3013A00E1FFDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81F95C9523C3013A00E1FFDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		81F95C9723C3013A00E1FFDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 		81F95C9123C3013A00E1FFDF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				81F95C9023C3013A00E1FFDF /* Up_Next_1.app */,
+				81F95C9023C3013A00E1FFDF /* Up Next.app */,
 				81F95CA623C3013C00E1FFDF /* Up_Next_1Tests.xctest */,
 				81F95CB123C3013C00E1FFDF /* Up_Next_1UITests.xctest */,
 			);
@@ -215,7 +215,7 @@
 				81EF607323CD117F00BD69D9 /* SwiftDotEnv */,
 			);
 			productName = Up_Next_1;
-			productReference = 81F95C9023C3013A00E1FFDF /* Up_Next_1.app */;
+			productReference = 81F95C9023C3013A00E1FFDF /* Up Next.app */;
 			productType = "com.apple.product-type.application";
 		};
 		81F95CA523C3013C00E1FFDF /* Up_Next_1Tests */ = {
@@ -532,7 +532,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.michaelamorrow.Up-Next-1";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Up Next";
 				SWIFT_OBJC_BRIDGING_HEADER = "Up_Next_1-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -557,7 +557,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.michaelamorrow.Up-Next-1";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Up Next";
 				SWIFT_OBJC_BRIDGING_HEADER = "Up_Next_1-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
