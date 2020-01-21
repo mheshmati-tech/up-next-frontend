@@ -208,6 +208,10 @@
                                     <action selector="generatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UTp-ni-dfv"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="m8w-X7-An9">
+                                <rect key="frame" x="188.5" y="605" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.0039215686274509803" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -218,7 +222,9 @@
                             <constraint firstItem="Cf4-Ec-zoe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Gm1-Fd-gYb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ntg-bG-Uz6" secondAttribute="bottom" constant="60" id="LYC-ak-i0a"/>
                             <constraint firstItem="Cf4-Ec-zoe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="UFX-aF-ACc"/>
+                            <constraint firstItem="Ntg-bG-Uz6" firstAttribute="top" secondItem="m8w-X7-An9" secondAttribute="bottom" constant="100" id="bQj-JD-zIq"/>
                             <constraint firstItem="J6y-jH-7dz" firstAttribute="top" secondItem="Cf4-Ec-zoe" secondAttribute="bottom" constant="40" id="ckd-O1-Tto"/>
+                            <constraint firstItem="m8w-X7-An9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xhp-xO-HBF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -226,6 +232,7 @@
                     <connections>
                         <outlet property="cityNameField" destination="gv9-Qp-Vwe" id="BCD-TB-8QZ"/>
                         <outlet property="genreTableView" destination="ZDU-qP-QXa" id="o2T-Tf-hqb"/>
+                        <outlet property="loadingSpinner" destination="m8w-X7-An9" id="VhO-X1-okY"/>
                         <outlet property="playlistNameField" destination="p69-Hu-PqS" id="LGn-XV-ryh"/>
                         <outlet property="selectGenreButton" destination="lQQ-rw-kN6" id="BDS-so-8xz"/>
                     </connections>

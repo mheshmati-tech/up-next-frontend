@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var playlistNameField: UITextField!
     @IBOutlet weak var selectGenreButton: UIButton!
     @IBOutlet weak var genreTableView: UITableView!
+    @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
     
     var spotifyManager = SpotifyManager()
     var refreshTokenManager = RefreshTokenManager()
@@ -37,10 +38,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         genreTableView.delegate = self
         
         genreTableView.isHidden = true
+        
+        loadingSpinner.stopAnimating()
     }
 
     @IBAction func generatePressed(_ sender: UIButton) {
         print("The first access token is \(keychain.get("accessToken") ?? String()) yeah")
+        loadingSpinner.startAnimating()
 
 //        let currentDate = Date()
 //        if let expirationDate = defaults.object (forKey: "expirationDate") as? Date {
@@ -58,6 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             } else {
                 let alertMessage = $1
                 DispatchQueue.main.async {
+                    self.loadingSpinner.stopAnimating()
                     let alertController = UIAlertController(title: "Failed to Refresh Token", message:
                         alertMessage, preferredStyle: .alert)
                     alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
@@ -107,6 +112,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 if $0, $2 {
                     let newPlaylistURL = $1
                     DispatchQueue.main.async {
+                        self.loadingSpinner.stopAnimating()
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let vc = storyboard.instantiateViewController(identifier: "CompletedViewController") as! CompletedViewController
                         vc.playlistURL = newPlaylistURL
@@ -115,6 +121,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 } else {
                     let alertMessage = $1
                     DispatchQueue.main.async {
+                        self.loadingSpinner.stopAnimating()
                         let alertController = UIAlertController(title: "Playlist Generation Failed", message:
                             alertMessage, preferredStyle: .alert)
                         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
@@ -123,6 +130,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         } else {
+            loadingSpinner.stopAnimating()
             let alertController = UIAlertController(title: "Playlist Generation Failed", message:
                 "You must complete all form fields to create a playlist.", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
@@ -187,6 +195,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.genreTableView.isHidden = true
             }
         }
+    }
+    
+    // Thanks to Stack Overflow for this method of limiting user input to letters and spaces (I added allowance for commas): https://stackoverflow.com/questions/31480558/uitextfield-keyboard-with-only-alphabet-no-numbers-no-caps-no-spacebar
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if range.location == 0 && string == " " { return false }
+        if textField.text?.last == " " && string == " " { return false }
+        if string == " " { return true }
+        if string == "," { return true}
+        if string.rangeOfCharacter(from: CharacterSet.letters.inverted) != nil { return false }
+        return true
     }
     
     

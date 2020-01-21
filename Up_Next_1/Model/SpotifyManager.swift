@@ -12,7 +12,7 @@ struct SpotifyManager {
     let createPlaylistURL = "https://up-next-playlist.herokuapp.com/playlists/new"
     
     func createPlaylist(accessToken: String, cityName: String, playlistName: String, genreId: String, completed: @escaping (Bool, String, Bool) -> Void) {
-        let urlString = "\(createPlaylistURL)?accessToken=\(accessToken)&city=\(cityName)&playlistName=\(playlistName)&genreId=\(genreId)"
+        let urlString = "\(createPlaylistURL)?accessToken=\(accessToken)&city=\(cityName)&genreId=\(genreId)&playlistName=\(playlistName)"
         performRequest(urlString: urlString) {
             if $0 {
                completed(true, $1, $2)
