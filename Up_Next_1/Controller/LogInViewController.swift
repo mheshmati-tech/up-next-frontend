@@ -94,6 +94,5 @@ class LogInViewController: UIViewController, SPTSessionManagerDelegate {
         }
         
         loginSpinner.startAnimating()
-        
     }
 }
