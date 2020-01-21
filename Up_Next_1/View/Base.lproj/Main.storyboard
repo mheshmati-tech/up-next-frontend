@@ -10,22 +10,18 @@
         <!--Log In View Controller-->
         <scene sceneID="LPM-pr-V49">
             <objects>
-                <viewController id="a4w-DJ-Hze" customClass="LogInViewController" customModule="Up_Next_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="a4w-DJ-Hze" customClass="LogInViewController" customModule="Up_Next" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dyF-ct-7za">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Up Next" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibj-M5-IWf">
-                                <rect key="frame" x="126" y="82" width="162" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="40"/>
-                                <color key="textColor" red="0.30196078430000001" green="0.83529411760000005" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbU-gu-SM4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbU-gu-SM4">
                                 <rect key="frame" x="80" y="419" width="254" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.30196078430000001" green="0.83529411760000005" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="254" id="W2g-cX-9WR"/>
+                                    <constraint firstAttribute="height" constant="58" id="a1f-BO-Un2"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="25"/>
                                 <state key="normal" title="Log-In with Spotify">
                                     <color key="titleColor" red="0.066666666669999999" green="0.0039215686269999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -34,14 +30,36 @@
                                     <action selector="logInButtonPressed:" destination="a4w-DJ-Hze" eventType="touchUpInside" id="oMe-cW-F2w"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="9xF-ci-fdG">
-                                <rect key="frame" x="163" y="652" width="89" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="9xF-ci-fdG">
+                                <rect key="frame" x="162" y="652" width="90" height="61"/>
                                 <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="ckE-tB-0b3"/>
+                                    <constraint firstAttribute="width" constant="90" id="vGs-pc-m2h"/>
+                                </constraints>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Up Next" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibj-M5-IWf">
+                                <rect key="frame" x="126" y="88" width="162" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="YCq-HF-a8S"/>
+                                    <constraint firstAttribute="width" constant="162" id="wXk-le-6Ub"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="40"/>
+                                <color key="textColor" red="0.30196078430000001" green="0.83529411760000005" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.0039215686269999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="tLk-H5-GN7" firstAttribute="trailing" secondItem="9xF-ci-fdG" secondAttribute="trailing" constant="162" id="4ox-Fl-JNt"/>
+                            <constraint firstItem="tLk-H5-GN7" firstAttribute="bottom" secondItem="9xF-ci-fdG" secondAttribute="bottom" constant="149" id="8Ft-cU-Zax"/>
+                            <constraint firstItem="Ibj-M5-IWf" firstAttribute="top" secondItem="tLk-H5-GN7" secondAttribute="top" id="HwA-M7-OZp"/>
+                            <constraint firstItem="9xF-ci-fdG" firstAttribute="leading" secondItem="tLk-H5-GN7" secondAttribute="leading" constant="162" id="It6-XV-uQM"/>
+                            <constraint firstItem="Ibj-M5-IWf" firstAttribute="centerX" secondItem="dyF-ct-7za" secondAttribute="centerX" id="TaN-CT-KGA"/>
+                            <constraint firstItem="zbU-gu-SM4" firstAttribute="centerX" secondItem="dyF-ct-7za" secondAttribute="centerX" id="XcG-5S-WRA"/>
+                            <constraint firstItem="zbU-gu-SM4" firstAttribute="centerY" secondItem="dyF-ct-7za" secondAttribute="centerY" id="v1z-QT-E1U"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tLk-H5-GN7"/>
                     </view>
                     <navigationItem key="navigationItem" id="tq1-db-WFQ"/>
@@ -56,7 +74,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="SearchViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Up_Next_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Up_Next" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -244,29 +262,28 @@
         <!--Completed View Controller-->
         <scene sceneID="WPe-v2-vb9">
             <objects>
-                <viewController storyboardIdentifier="CompletedViewController" id="pqq-9U-F2K" customClass="CompletedViewController" customModule="Up_Next_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CompletedViewController" id="pqq-9U-F2K" customClass="CompletedViewController" customModule="Up_Next" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JWZ-Z4-KNH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Up Next" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z41-h2-YYl">
-                                <rect key="frame" x="126" y="75" width="162" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Up Next" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z41-h2-YYl">
+                                <rect key="frame" x="126" y="44" width="162" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="162" id="2WM-Sf-2Vd"/>
+                                    <constraint firstAttribute="height" constant="40" id="L2q-6q-IXe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="40"/>
                                 <color key="textColor" red="0.30196078430000001" green="0.83529411760000005" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Playlist Generated!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skx-mE-c6K">
-                                <rect key="frame" x="73" y="314" width="269" height="98"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="25"/>
-                                <color key="textColor" red="0.0" green="0.56862745100000001" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXZ-5Y-VIw">
-                                <rect key="frame" x="95" y="420" width="225" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXZ-5Y-VIw">
+                                <rect key="frame" x="95" y="420" width="224" height="57"/>
                                 <color key="backgroundColor" red="0.30196078430000001" green="0.83529411760000005" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="224" id="RQ7-yk-VKi"/>
+                                    <constraint firstAttribute="height" constant="57" id="y2o-nC-Z5l"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="25"/>
                                 <state key="normal" title="Open Playlist">
                                     <color key="titleColor" red="0.066666666669999999" green="0.0039215686269999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -275,8 +292,26 @@
                                     <action selector="openPlaylistPressed:" destination="pqq-9U-F2K" eventType="touchUpInside" id="FVj-0d-6ot"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playlist Generated!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skx-mE-c6K">
+                                <rect key="frame" x="73" y="336" width="268" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="268" id="cOm-nM-6NB"/>
+                                    <constraint firstAttribute="height" constant="39" id="pia-gv-dS5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.56862745100000001" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.0039215686269999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="aXZ-5Y-VIw" firstAttribute="top" secondItem="skx-mE-c6K" secondAttribute="bottom" constant="45" id="0wz-53-Ofa"/>
+                            <constraint firstItem="z41-h2-YYl" firstAttribute="top" secondItem="uy1-zy-tEv" secondAttribute="top" id="8KX-YV-fJk"/>
+                            <constraint firstItem="z41-h2-YYl" firstAttribute="centerX" secondItem="JWZ-Z4-KNH" secondAttribute="centerX" id="Att-VR-WxO"/>
+                            <constraint firstItem="uy1-zy-tEv" firstAttribute="bottom" secondItem="aXZ-5Y-VIw" secondAttribute="bottom" constant="385" id="W5R-y2-ZHK"/>
+                            <constraint firstItem="aXZ-5Y-VIw" firstAttribute="centerX" secondItem="JWZ-Z4-KNH" secondAttribute="centerX" id="mQB-YZ-ZRb"/>
+                            <constraint firstItem="skx-mE-c6K" firstAttribute="centerX" secondItem="JWZ-Z4-KNH" secondAttribute="centerX" id="uTK-EW-lbR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uy1-zy-tEv"/>
                     </view>
                     <connections>
