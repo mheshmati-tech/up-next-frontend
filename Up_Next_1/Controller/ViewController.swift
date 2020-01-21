@@ -40,6 +40,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         genreTableView.isHidden = true
         
         loadingSpinner.stopAnimating()
+        
+        self.hideKeyboard()
     }
 
     @IBAction func generatePressed(_ sender: UIButton) {
@@ -87,12 +89,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //    }
     
 //    func textFieldDidEndEditing(_ textField: UITextField) {
-////        if var city = cityNameField.text, let accessToken = keychain.get("accessToken") {
-////            city = city.replacingOccurrences(of: " ", with: "%20")
-////            spotifyManager.createPlaylist(cityName: city, accessToken: accessToken)
-////        }
-////        cityNameField.text = ""
-////        cityNameField.placeholder = "Enter a city name"
+//        textField.resignFirstResponder()
 //    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -232,3 +229,15 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
+// Dismiss the keyboard when you tap away from the text input fields
+extension UIViewController {
+    func hideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
