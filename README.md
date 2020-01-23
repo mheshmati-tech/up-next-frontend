@@ -22,7 +22,7 @@ Download this repository, open it in XCode 11.3, and add the following dependenc
     - [Spotify iOS SDK 1.2.0](https://developer.spotify.com/documentation/ios/quick-start/)
     - [Keychain Swift](https://github.com/evgenyneu/keychain-swift)
 
-Follow the [Spotify iOS SDK installation instructions](https://developer.spotify.com/documentation/ios/quick-start/) and update your project's configurations as necessary. You will need to create a Spotify App in your [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/login) to receive a Spotify Client ID and Client Secret.
+Follow the [Spotify iOS SDK installation instructions](https://developer.spotify.com/documentation/ios/quick-start/) and update your project's configurations as necessary. You will need to register a Spotify App in your [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/login) to receive a Spotify Client ID and Client Secret. Make sure to use the bundle id and callback URL from your XCode project when you register your Spotify App.
 
 Create a file in the "Model" folder of your XCode project called ClientData.swift. In that file, create a struct called ClientData containing the variable clientID which holds your Spotify Client ID. Make sure that this file is included in your gitignore so that it is not committed to github.
 
